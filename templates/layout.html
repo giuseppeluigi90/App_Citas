@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="utf-8"> 
+        <title> {% block title %} | Kosmika Box Media {% endblock %}  </title>
+        
+        <link rel="icon" type="favicon/x-icon" href="{{ url_for('static', filename='css/kosmika.png') }}">
+
+        <!-- Enlaces Remotos para Bootstrap y CSS 
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        -->
+        
+        <!-- Enlaces locales para Bootstrap y CSS -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap/css/bootstrap.min.css') }}">
+    </head>
+
+    <body class="fondo">
+        <div class="container"> 
+                {% block content %}
+                    
+                {% endblock %}
+            <footer id="footer">
+                <div class="row text-center">
+                    <br>
+                    <br>
+                    <br>
+                    <h6> Aplicacion de citas para Asesoramiento - {{ now.month }} / {{ now.year }}  </h6>
+                </div>
+            </footer>
+        </div>
+    </body>
+
+</html>

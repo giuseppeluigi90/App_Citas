@@ -1,0 +1,126 @@
+/* Fuentes Personalizadas */
+@font-face{
+    font-family: "WebSymbolsRegular";
+    src: url('fonts/websymbols-regular-webfont.eot');
+    src: url('fonts/websymbols-regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/websymbols-regular-webfont.woff') format('woff'),
+         url('fonts/websymbols-regular-webfont.ttf') format('truetype'),
+         url('fonts/websymbols-regular-webfont.svg#WebSymbolsRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.fondo{
+    background: rgba(2, 62, 112, 0.822);
+    opacity: 0.9;
+}
+
+.aside-left{
+    height: 125px;
+    text-align: center;
+}
+
+.formu{
+    display: block;
+    float: left;
+}
+
+.f-right{
+    float: right;
+}
+
+.flotador{
+    z-index: 5;
+    margin:auto;
+    margin-top: 60px;
+    padding: 15px;
+    width: 75%;
+    height: 500px;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(63, 63, 63);
+    justify-content: center;
+}
+
+.flotador2{
+    z-index: 5;
+    margin:auto;
+    margin-top: 60px;
+    padding: 15px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgb(63, 63, 63);
+    justify-content: center;
+}
+
+label{
+    font-weight: 600;
+    color: rgb(14, 136, 184);
+}
+
+.titu{
+    color: rgb(6, 52, 105);
+    margin-left: -10px;
+}
+
+th{
+    color: rgb(14, 136, 184)
+}
+
+#filtro{
+    display: inline-block;
+}
+
+#filtro a{
+    float: right;
+    position: relative;
+    text-decoration: none;
+    font-size: 13px;
+    font-weight: normal;
+    margin-left: 20px;
+}
+
+.icon{
+    font-family: "WebSymbolsRegular";
+}
+
+#search{
+    text-align: center;
+    display: block;
+    position: absolute;
+    margin-left: 210px;
+    margin-top: -30px;
+    height: 30px;
+}
+
+.sub-Filtros{
+    float: left;
+    margin-left: 10px;
+}
+
+.filtro h6{
+    margin-right: 25px;
+}
+
+.filtro a:last-child{
+    float: right;
+}
+
+#footer{
+    margin-top: 5px;
+    color: #ffffff;
+    font-size: 10px;
+}
+
+.message .alert-success{
+    height:30px;
+    padding: 20px;
+    background: blue;
+    color: white;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+
+

@@ -1,0 +1,83 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Registro de citas
+
+    {{super() }}
+{% endblock %}
+
+{% block content %}
+            <!-- Esto ira al medio de la ventana de forma vertical y horizontal -->
+            <div class="row flotador2">
+                <div class="col-12">
+                    <div class="row m-1 align-items-center">
+                        <div class="col-6">
+                            <h2 class="titu"> Registro de citas </h2>
+                        </div>
+                        <div class="col-3">
+                            <form action="">
+                                <input class="form-control" type="search" id="buscar" placeholder="Buscar por apellidos">
+                                <label id="search" class="icon"> L </label>
+                            </form>
+                        </div>
+                        <div class="col-3" id="filtro">
+                            <h5> <a href="">  </a>  </h5>
+                            <h5> <a href=""> Dia </a>  </h5>
+                            <h5> <a href=""> Semana </a>  </h5>
+                            <h5> <a href=""> Mes </a>  </h5>
+                            <h5> <a href=""> Todos </a>  </h5>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row">
+                        <div class="col-12 filtro">
+                                <h6 class="sub-Filtros"> Filtrar por: </h6>
+                                <a href="#" class="btn btn-outline-secondary btn-sm sub-Filtros"> Categoria </a>
+                                <a href="#" class="btn btn-outline-secondary btn-sm sub-Filtros"> ASC / DESC </a>
+                                <a href="#" class="btn btn-outline-secondary btn-sm sub-Filtros"> Recientes </a>
+                                <a href="#" class="btn btn-danger btn-sm sub-Filtros"> Ver Agenda </a>
+                        </div>
+                    </div>
+                    <hr>
+
+                    <div class="row text-center">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col"> Nombres </th>
+                                    <th scope="col"> Apellidos </th>
+                                    <th scope="col"> Email </th>
+                                    <th scope="col"> Celular </th>
+                                    <th scope="col"> Categoria </th>
+                                    <th scope="col"> Fecha </th>
+                                    <th scope="col"> Hora </th>
+                                    <th scope="col"> Nota </th>
+                                    <th scope="col">  </th>
+                                    <th scope="col"> </th>
+                                </tr>
+                            </thead>
+                            
+                            {% for cita in citas %}
+                            <tbody>
+                                <tr>
+                                    <td> {{cita.1}} </td>
+                                    <td> {{cita.2}} </td>
+                                    <td> {{cita.4}} </td>
+                                    <td> {{cita.5}} </td>
+                                    <td> {{cita.6}} </td>
+                                    <td> {{cita.7}} </td>
+                                    <td> {{cita.8}} </td>
+                                    <td> <a href="#" class="btn btn-outline-primary btn-sm"> Cambiar </a> </td>
+                                    <td> <a href="#" class="btn btn-outline-danger btn-sm"> Eliminar </a> </td>
+                                </tr>
+                            </tbody>
+                            {% endfor %}
+                        </table>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Fin del contenido central-->
+
+{% endblock %}

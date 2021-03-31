@@ -1,0 +1,84 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+    Programa tú cita
+
+    {{super() }}
+{% endblock %}
+
+{% block content %}
+
+        <!-- Esto ira al medio de la ventana de forma vertical y horizontal -->
+            <div class="row flotador">
+                <div class="col-12">
+                    <div class="row m-1">
+                        <h2 class="titu"> Programa tú cita </h2>
+                        <hr>
+                    </div>
+                    <form action="" method="POST" class="row g-3">
+                        <div class="col-md-4">
+                            <label for="nombres" class="form-label"> Nombres: </label>
+                            <input type="text" class="form-control" name="nombres" placeholder="Escriba aquí sus nombres">
+                        </div>
+                        <div class="col-md-8">
+                          <label for="apellidos" class="form-label"> Apellidos: </label>
+                          <input type="text" class="form-control" name="apellidos" placeholder="Escriba aquí sus apellidos">
+                        </div>
+
+                        <div class="col-md-8">
+                            <label for="email" class="form-label"> Email: </label>
+                            <input type="text" class="form-control" name="email" placeholder="Escriba aquí su correo electronico">
+                        </div>
+                        <div class="col-md-4">
+                          <label for="celular" class="form-label"> Celular: </label>
+                          <input type="number" class="form-control" name="celular" placeholder="Escriba aquí su número">
+                        </div>
+
+                        <div class="col-md-6">
+                          <label for="categoria" class="form-label"> Categoria: </label>
+                          <select class="form-select" name="categoria" id="">
+                              <option selected> Seleccione... </option>
+                              <option value="1"> Interactivos </option>
+                              <option value="1"> Marketing </option>
+                          </select>
+                        </div>
+                        <div class="col-md-4">
+                            <label for="fecha" class="form-label"> Fecha: </label>
+                            <input class="form-control" type="date" name="fecha">
+                        </div>
+                        <div class="col-md-2">
+                            <label for="hora" class="form-label"> Hora: </label>
+                            <input class="form-control" type="time" name="hora">
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="nota" class="form-label"> Ingrese un comentario: (Opcional) </label>
+                            <input class="form-control" type="textarea" name="nota" placeholder="Escriba aquí un comentario">
+                        </div>
+
+                        <div class="col-9">
+                          
+                        </div>
+                        <div class="col-1">
+                            <button type="submit" class="btn btn-outline-danger btn-sm f-right"> Cancelar </button>
+                          </div>
+                          <div class="col-2">
+                                <input class="btn btn-outline-primary btn-sm f-right" type="submit" value="Guardar">
+                                <!-- <button type="submit" class="btn btn-outline-primary btn-sm f-right"> Guardar </button> -->
+                          </div>
+                            {% with messages = get_flashed_messages() %}
+                                {% if messages %}
+                                    {% for message in messages %}
+                                        <div class="message alert-success"> 
+                                            {{message}}
+                                        </div>
+                                    {% endfor%}
+                                {% endif %}
+                            {% endwith %}
+                      </form>
+                </div>
+                
+            </div>
+            <!-- Fin del contenido central-->
+
+{% endblock %}
