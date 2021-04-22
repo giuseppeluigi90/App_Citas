@@ -15,8 +15,8 @@ app.secret_key = 'clave_secreta_flask'
 # Conexion MySQL Local
 app.config['MYSQL_HOST'] = 'localhost'
 app.config['MYSQL_USER'] = 'root'
-app.config['MYSQL_PASSWORD'] = ''
-app.config['MYSQL_DB'] = 'kosmikacitas'
+app.config['MYSQL_PASSWORD'] = '2702'
+app.config['MYSQL_DB'] = 'kosmika_Asesoria'
 
 mysql = MySQL(app)
 
@@ -30,27 +30,25 @@ def date_now():
 # Crear ruta inicial
 @app.route('/asesoramiento', methods =['GET', 'POST'])
 def crear_cita():
+    
     if request.method == 'POST':
-
         nombres = request.form['nombres']
         apellidos = request.form['apellidos']
         email = request.form['email']
         celular = request.form['celular']
         categoria = request.form['categoria']
-        fecha = request.form['fecha']
-        hora = request.form['hora']
+        fecha_cita = request.form['fecha_cita']
+        hora_cita = request.form['hora_cita']
         nota = request.form['nota']
-        registro = datetime.now()
+        created_at = datetime.now()
 
-        # fecha_dt = datetime.strptime(fecha, '%dd/%mm/%Y')
-
-        # return f"{nombres} {apellidos} {celular} {email} {categoria} {nota} {fecha} {hora} {estado}"
-
+        # fecha_cita = datetime.now()
+        # hora_cita = datetime.now()
         cursor = mysql.connection.cursor()
-        cursor.execute("INSERT INTO Citas VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)", (nombres, apellidos, email, celular, categoria, fecha, hora, nota, registro))
+        cursor.execute("INSERT INTO registros VALUES (NULL, %s, %s, %s, %s, %s, %s, %s, %s, %s)", 
+                        (nombres, apellidos, email, celular, categoria, fecha_cita, hora_cita, nota, created_at))
         cursor.connection.commit()
         flash('Se ha registrado tú cita correctamente. Gracias.')
-    
         return render_template('UI.html')
         #return redirect(url_for('/'))
 
@@ -61,7 +59,7 @@ def crear_cita():
 @app.route('/ver_citas')
 def ver_citas():
     cursor = mysql.connection.cursor()
-    cursor.execute("SELECT * FROM Citas")
+    cursor.execute("SELECT * FROM registros")
     citas = cursor.fetchall()
     cursor.close()
     
@@ -69,6 +67,6 @@ def ver_citas():
 
 # Mantener la ejecucion en el servidor de flask abierta permanentemente
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)
     
 
