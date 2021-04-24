@@ -9,7 +9,8 @@
 {% block content %}
 
         <!-- Esto ira al medio de la ventana de forma vertical y horizontal -->
-            <div class="row flotador">
+        <div class="container"> 
+            <div class="flotador">
                 <div class="col-12">
                     <div class="row m-1">
                         <h2 class="titu"> Programa tú cita </h2>
@@ -70,7 +71,7 @@
                                 {% if messages %}
                                     {% for message in messages %}
                                         <div class="message alert-success"> 
-                                            {{message}}
+                                            <h5> {{message}} </h5> 
                                         </div>
                                     {% endfor%}
                                 {% endif %}
@@ -80,5 +81,6 @@
                 
             </div>
             <!-- Fin del contenido central-->
+        </div>
 
 {% endblock %}
